@@ -1,0 +1,233 @@
+
+> aihire@0.1.0 lint
+> eslint
+
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\candidate\applications\page.tsx
+    5:39  warning  'SlidersHorizontal' is defined but never used                    @typescript-eslint/no-unused-vars
+    8:29  warning  'CardHeader' is defined but never used                           @typescript-eslint/no-unused-vars
+    8:41  warning  'CardTitle' is defined but never used                            @typescript-eslint/no-unused-vars
+    8:52  warning  'CardDescription' is defined but never used                      @typescript-eslint/no-unused-vars
+   69:34  error    Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  194:28  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\candidate\dashboard\page.tsx
+   11:15  warning  'SettingsIcon' is defined but never used                         @typescript-eslint/no-unused-vars
+   15:3   warning  'ExternalLink' is defined but never used                         @typescript-eslint/no-unused-vars
+   16:3   warning  'ChevronRight' is defined but never used                         @typescript-eslint/no-unused-vars
+   26:16  warning  'CardHeader' is defined but never used                           @typescript-eslint/no-unused-vars
+   26:28  warning  'CardTitle' is defined but never used                            @typescript-eslint/no-unused-vars
+   26:39  warning  'CardDescription' is defined but never used                      @typescript-eslint/no-unused-vars
+   27:10  warning  'Input' is defined but never used                                @typescript-eslint/no-unused-vars
+   31:20  warning  'mockApplicants' is defined but never used                       @typescript-eslint/no-unused-vars
+   32:10  warning  'Job' is defined but never used                                  @typescript-eslint/no-unused-vars
+   32:15  warning  'Applicant' is defined but never used                            @typescript-eslint/no-unused-vars
+   36:35  warning  'replaceResume' is defined but never used                        @typescript-eslint/no-unused-vars
+   54:36  warning  'authLoading' is assigned a value but never used                 @typescript-eslint/no-unused-vars
+  410:64  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  548:72  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  560:23  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  560:68  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\candidate\profile\page.tsx
+   11:10  warning  'Skeleton' is defined but never used                             @typescript-eslint/no-unused-vars
+  573:51  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  573:63  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  649:57  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  649:75  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\contact\page.tsx
+  40:15  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\features\page.tsx
+  3:16  warning  'CardHeader' is defined but never used  @typescript-eslint/no-unused-vars
+  3:28  warning  'CardTitle' is defined but never used   @typescript-eslint/no-unused-vars
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\[id]\page.tsx
+   6:33  warning  'Briefcase' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               @typescript-eslint/no-unused-vars
+  42:7   error    Error: Cannot access variable before it is declared
+
+`fetchJobDetails` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\[id]\page.tsx:42:7
+  40 |   useEffect(() => {
+  41 |     if (id) {
+> 42 |       fetchJobDetails();
+     |       ^^^^^^^^^^^^^^^ `fetchJobDetails` accessed before it is declared
+  43 |     }
+  44 |   }, [id]);
+  45 |
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\[id]\page.tsx:63:3
+  61 |   }, [user, id]);
+  62 |
+> 63 |   const fetchJobDetails = async () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 64 |     setLoading(true);
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 65 |     setError(null);
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 78 |     }
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 79 |   };
+     | ^^^^^ `fetchJobDetails` is declared here
+  80 |
+  81 |   // Perform Application creation and checks
+  82 |   const handleApplyClick = async () => {                                                                                     react-hooks/immutability
+  44:6   warning  React Hook useEffect has a missing dependency: 'fetchJobDetails'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/exhaustive-deps
+  49:7   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\[id]\page.tsx:49:7
+  47 |   useEffect(() => {
+  48 |     if (user && id) {
+> 49 |       setCheckingApplied(true);
+     |       ^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  50 |       hasCandidateApplied(id, user.uid)
+  51 |         .then((applied) => {
+  52 |           setHasApplied(applied);  react-hooks/set-state-in-effect
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx
+    5:18  warning  'MapPin' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+    5:49  warning  'Filter' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-unused-vars
+   33:5   error    Error: Cannot access variable before it is declared
+
+`fetchJobs` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx:33:5
+  31 |
+  32 |   useEffect(() => {
+> 33 |     fetchJobs();
+     |     ^^^^^^^^^ `fetchJobs` accessed before it is declared
+  34 |   }, []);
+  35 |
+  36 |   const fetchJobs = async () => {
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx:36:3
+  34 |   }, []);
+  35 |
+> 36 |   const fetchJobs = async () => {
+     |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 37 |     setLoading(true);
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 38 |     try {
+     …
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 46 |     }
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 47 |   };
+     | ^^^^^ `fetchJobs` is declared here
+  48 |
+  49 |   // Filter and Sort options
+  50 |   const workModes = ["All", "Remote", "Hybrid", "On-site"];                                                                                                                                                                                                                                                                                                                              react-hooks/immutability
+  119:41  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          @typescript-eslint/no-explicit-any
+  289:14  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx:289:14
+  287 |           <aside className="hidden lg:block lg:col-span-3 bg-white p-6 rounded-xl border border-slate-200 sticky top-24 custom-shadow">
+  288 |             <h2 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4">Filters</h2>
+> 289 |             <FilterPanel />
+      |              ^^^^^^^^^^^ This component is created during render
+  290 |           </aside>
+  291 |
+  292 |           {/* Mobile Filter Drawer */}
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx:136:23
+  134 |   };
+  135 |
+> 136 |   const FilterPanel = () => (
+      |                       ^^^^^^^
+> 137 |     <div className="space-y-6">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 138 |       {/* Search Input */}
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 228 |     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 229 |   );
+      | ^^^^ The component is created during render here
+  230 |
+  231 |   return (
+  232 |     <div className="pt-28 pb-20 bg-slate-50 min-h-screen">  react-hooks/static-components
+  301:18  error    Error: Cannot create components during render
+
+Components created during render will reset their state each time they are created. Declare components outside of render.
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx:301:18
+  299 |                   <Button variant="ghost" size="sm" onClick={() => setShowMobileFilters(false)} className="p-1 h-auto text-xs">Close</Button>
+  300 |                 </div>
+> 301 |                 <FilterPanel />
+      |                  ^^^^^^^^^^^ This component is created during render
+  302 |               </div>
+  303 |             </div>
+  304 |           )}
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\jobs\page.tsx:136:23
+  134 |   };
+  135 |
+> 136 |   const FilterPanel = () => (
+      |                       ^^^^^^^
+> 137 |     <div className="space-y-6">
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 138 |       {/* Search Input */}
+      …
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 228 |     </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 229 |   );
+      | ^^^^ The component is created during render here
+  230 |
+  231 |   return (
+  232 |     <div className="pt-28 pb-20 bg-slate-50 min-h-screen">                                                                                react-hooks/static-components
+  398:73  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\login\page.tsx
+   39:21  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  189:18  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\page.tsx
+   15:3    warning  'Briefcase' is defined but never used                            @typescript-eslint/no-unused-vars
+   16:3    warning  'Users' is defined but never used                                @typescript-eslint/no-unused-vars
+   17:3    warning  'Calendar' is defined but never used                             @typescript-eslint/no-unused-vars
+   18:3    warning  'Award' is defined but never used                                @typescript-eslint/no-unused-vars
+   20:3    warning  'Zap' is defined but never used                                  @typescript-eslint/no-unused-vars
+   21:3    warning  'Globe' is defined but never used                                @typescript-eslint/no-unused-vars
+   22:3    warning  'Lock' is defined but never used                                 @typescript-eslint/no-unused-vars
+   23:3    warning  'ChevronRight' is defined but never used                         @typescript-eslint/no-unused-vars
+  284:71   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  284:169  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  286:66   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  286:220  error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  414:21   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  414:34   error    `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\pricing\page.tsx
+  5:28  warning  'CardTitle' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\profile\page.tsx
+  6:10  warning  'User' is defined but never used             @typescript-eslint/no-unused-vars
+  9:16  warning  'CardHeader' is defined but never used       @typescript-eslint/no-unused-vars
+  9:28  warning  'CardTitle' is defined but never used        @typescript-eslint/no-unused-vars
+  9:39  warning  'CardDescription' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\gokul\Downloads\AI_Recruiter\app\signup\page.tsx
+  65:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\gokul\Downloads\AI_Recruiter\contexts\AuthContext.tsx
+  18:55   error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  19:103  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\gokul\Downloads\AI_Recruiter\services\auth.ts
+  10:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  11:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 67 problems (31 errors, 36 warnings)
+
